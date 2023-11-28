@@ -1,2 +1,2 @@
 # cpp_chess
-My university assignmet.
+My university assignment
