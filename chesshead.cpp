@@ -66,3 +66,48 @@ void Board::printBoard(){
     cout<<"    a b c d e f g h\n";
     file=8;
 }
+
+bool Board::isValid(const string& move){
+    int len=move.length();
+    int movecord;
+
+    
+
+    if(len=2){//pawn move
+        int addForRank;
+        switch(move[0]){
+            case 'a':addForRank=0;
+            case 'b':addForRank=1;
+            case 'c':addForRank=2;
+            case 'd':addForRank=3;
+            case 'e':addForRank=4;
+            case 'f':addForRank=5;
+            case 'g':addForRank=6;
+            case 'h':addForRank=7;
+        }
+        movecord=(8-static_cast<int>(move[1]))*8+addForRank;
+        if(movecount%2==0){//white's turn
+            if(pieceVector[movecord/8][movecord%8].getColor()==1){//teammate present
+                return false;
+            }
+            if(pieceVector[movecord/8][movecord%8].getColor()==0){//enemy present
+                return false;
+            }
+            if(move[1]==4){
+                
+            }
+           // if()
+        }
+        else{//black's turn
+            if(pieceVector[movecord/8][movecord%8].getColor()==0){//teammate present
+                return false;
+            }
+            if(pieceVector[movecord/8][movecord%8].getColor()==1){//enemy present
+                return false;
+            }
+        }
+
+
+    }
+
+}

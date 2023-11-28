@@ -13,7 +13,7 @@ class Piece{
     char getType(){return pType;}
     int getColor(){return pColor;}
     private:
-    char pType;//initials of each piece, expect n for knight
+    char pType;//initials of each piece, except for n for knight
                //k reserved for king
 
     int pColor;//0 for black 1 for white 2 for empty
@@ -29,6 +29,7 @@ class Board{
     friend class Piece;
     private:
     vector<vector<Piece> > pieceVector;
+    static int movecount;//if even(starts with 0) its now white's turn
 };
 
 
